@@ -6,7 +6,7 @@
 /*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:34:37 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/26 21:25:42 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/05/28 14:20:07 by ilsadi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static int	clean_tab(char **tab, char **tmp, int k)
 	return (k);
 }
 
+// split les arguments si jamais elles sont toute dans une chaine 
 char	**split_args(int ac, char **av)
 {
 	char	**tab;

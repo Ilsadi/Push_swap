@@ -6,12 +6,14 @@
 /*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 19:24:57 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/27 23:27:15 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/05/29 01:26:11 by ilsadi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
+// verifie valeur str sont bien tous des nombres et converti pour tab de int
 int	ft_verif_and_convert(char **str_values, int *int_values)
 {
 	int	i;
@@ -22,30 +24,33 @@ int	ft_verif_and_convert(char **str_values, int *int_values)
 	while (str_values[i])
 	{
 		if (!(ft_is_number(str_values[i])))
-			return (ft_putstr_fd("Error\n", 2), 0);
+			return (0);
 		int_values[i] = ft_atoi_secure(str_values[i], &error);
+		if (error)
+			return (0);
 		i++;
 	}
 	if (error == 1)
-		return (ft_putstr_fd("Error\n", 2), free(int_values), 0);
+		return (free(int_values), 0);
 	i++;
 	return (1);
 }
 
+// free l'integralite de mes valeurs dans mes tableaux
 void	free_all(char **str_values, int *int_values)
 {
 	ft_free_tab(str_values);
 	free(int_values);
 }
 
-int	*parse_args(int ac, char **av, int *size)
+// controle final des arguments
+int	*parse_args(int ac, char **av)
 {
 	int		i;
 	char	**str_values;
 	int		*int_values;
 	int		error;
 
-	(void)size;
 	i = 0;
 	error = 0;
 	if (ac > 1)
@@ -61,8 +66,7 @@ int	*parse_args(int ac, char **av, int *size)
 		}
 	}
 	else
-		return (NULL);
+		return (ft_putstr_fd("Error\n", 2), NULL);
 	ft_free_tab(str_values);
-
 	return (int_values);
 }
