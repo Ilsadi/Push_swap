@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 12:44:34 by ilsadi            #+#    #+#              #
-#    Updated: 2025/05/27 23:26:39 by ilsadi           ###   ########.fr        #
+#    Updated: 2025/06/14 01:23:14 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRCS =  ft_isalpha.c \
 	ft_printf.c \
 	ft_countnum.c \
 	ft_count_word.c \
-	ft_free_tab.c
+	ft_free_tab.c \
+	ft_sort_int_tab.c
 
 SRCS_BONUS = ft_lstadd_back_bonus.c \
 	ft_lstadd_front_bonus.c \

@@ -3,24 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 20:22:24 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/29 01:21:20 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 04:31:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+static t_list	*int_array_to_list(int *tab, int size)
+{
+	t_list	*list;
+	int		i;
+	int		*value;
+	t_list	*new;
+
+	i = 0;
+	list = NULL;
+	while (i < size)
+	{
+		value = malloc(sizeof(int));
+		if (!value)
+			return (NULL);
+		*value = tab[i];
+		new = ft_lstnew(value);
+		if (!new)
+		{
+			free(value);
+			ft_lstclear(&list, free);
+			return (NULL);
+		}
+		ft_lstadd_back(&list, new);
+		i++;
+	}
+	return (list);
+}
+
+int main(int ac, char **av)
 {
 	int		*int_values;
-	t_list	*list_a;
-	t_list	*list_b;
-	int		min;
+	t_list	*list_a = NULL;
+	t_list	*list_b = NULL;
 
-	list_a = NULL;
-	list_b = NULL;
+	if (ac < 2)
+		return (0);
 	int_values = parse_args(ac, av);
 	if (!int_values)
 		return (1);
@@ -28,20 +55,8 @@ int	main(int ac, char **av)
 	free(int_values);
 	if (!list_a)
 		return (1);
-	list_b = NULL;
-	ft_printf("Avant tri :\n");
-	print_stack(list_a, "A");
-	min = ft_find_min(list_a);
-	if (min < 0)
-	{
-		apply_offset(list_a, -min);
-		radix_sort(&list_a, &list_b);
-		apply_offset(list_a, min);
-	}
-	else
-		radix_sort(&list_a, &list_b);
-	ft_printf("Apres tri :\n");
-	print_stack(list_a, "A");
+	sort_dispatcher(&list_a, &list_b);
 	ft_lstclear(&list_a, free);
 	return (0);
 }
+

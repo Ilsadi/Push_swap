@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:06:00 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/28 18:41:58 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 04:44:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 //passe le premier dernier et decale tout les autres d'un
-void	ra(t_list **list_a)
+void	ra(t_list **list_a, int print)
 {
 	t_list	*tmp;
 
@@ -23,11 +23,13 @@ void	ra(t_list **list_a)
 	*list_a = (*list_a)->next;
 	tmp->next = NULL;
 	ft_lstadd_back(list_a, tmp);
+	if (print)
+		ft_putstr_fd("ra\n", 1);
 }
 
 
 // la meme sur la liste b
-void	rb(t_list **list_b)
+void	rb(t_list **list_b, int print)
 {
 	t_list	*tmp;
 
@@ -37,10 +39,13 @@ void	rb(t_list **list_b)
 	*list_b = (*list_b)->next;
 	tmp->next = NULL;
 	ft_lstadd_back(list_b, tmp);
+	if (print)
+		ft_putstr_fd("rb\n", 1);
 }
 
 void	rr(t_list **list_a, t_list **list_b)
 {
-	ra(list_a);
-	rb(list_b);
+	ra(list_a, 0);
+	rb(list_b, 0);
+	ft_putstr_fd("rr\n", 1);
 }

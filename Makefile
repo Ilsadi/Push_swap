@@ -7,13 +7,14 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS = parsing/check_args.c \
 	parsing/parse_args.c \
 	parsing/split_args.c \
-	parsing/convert.c \
 	commands/push.c \
 	commands/rotate.c \
 	commands/rev_rotate.c \
 	commands/swap.c \
-	sort/sort_max.c \
 	sort/sort_radix.c \
+	sort/utils_specific_sort.c \
+	sort/sort.c \
+	sort/specific_sort.c \
 	push_swap.c
 
 OBJS = ${SRCS:.c=.o}

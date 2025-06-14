@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:28:45 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/28 14:43:42 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 03:59:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 // check si il y a un signe et verifie qu'il y est uniquement des chiffres.
+
 int	ft_is_number(char *str)
 {
 	int	i;
@@ -35,6 +37,7 @@ int	ft_is_number(char *str)
 }
 
 // check si il y a un doublon parmis les arguments
+
 int	ft_check_doubles(int *tab, int size)
 {
 	int	i;
@@ -56,6 +59,7 @@ int	ft_check_doubles(int *tab, int size)
 }
 
 // permet la conversion en evitant les overflow d'int
+
 int	ft_atoi_secure(char *str, int *error_flag)
 {
 	int			i;

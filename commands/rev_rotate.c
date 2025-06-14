@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:06:09 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/28 18:34:58 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 04:45:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // passe le dernier premier et decale tout les autres d'un
-void	rra(t_list **list_a)
+void	rra(t_list **list_a, int print)
 {
 	t_list	*before_last;
 	t_list	*last;
@@ -29,10 +29,12 @@ void	rra(t_list **list_a)
 	before_last->next = NULL;
 	last->next = *list_a;
 	*list_a = last;
+	if (print)
+		ft_putstr_fd("rra\n", 1);
 }
 
 // meme chose que rra mais sur la liste b
-void	rrb(t_list **list_b)
+void	rrb(t_list **list_b, int print)
 {
 	t_list	*before_last;
 	t_list	*last;
@@ -48,11 +50,14 @@ void	rrb(t_list **list_b)
 	before_last->next = NULL;
 	last->next = *list_b;
 	*list_b = last;
+	if (print)
+		ft_putstr_fd("rrb\n", 1);
 }
 
 // les 2 en meme temps
 void	rrr(t_list **list_a, t_list **list_b)
 {
-	rra(list_a);
-	rrb(list_b);
+	rra(list_a, 0);
+	rrb(list_b, 0);
+	ft_putstr_fd("rrr\n", 1);
 }

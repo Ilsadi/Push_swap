@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:44:22 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/26 22:21:52 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 04:31:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <strings.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -88,5 +89,6 @@ int		ft_putchar(char c);
 int		ft_count_num(int n);
 int		ft_count_word(char const *str, char c);
 void	ft_free_tab(char **tab);
+int		ft_sort_int_tab(int *tab, int size);
 
 #endif

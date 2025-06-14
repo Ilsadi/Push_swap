@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 19:24:57 by ilsadi            #+#    #+#             */
-/*   Updated: 2025/05/29 01:26:11 by ilsadi           ###   ########.fr       */
+/*   Updated: 2025/06/14 03:54:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 // verifie valeur str sont bien tous des nombres et converti pour tab de int
 int	ft_verif_and_convert(char **str_values, int *int_values)
@@ -46,13 +45,9 @@ void	free_all(char **str_values, int *int_values)
 // controle final des arguments
 int	*parse_args(int ac, char **av)
 {
-	int		i;
 	char	**str_values;
 	int		*int_values;
-	int		error;
 
-	i = 0;
-	error = 0;
 	if (ac > 1)
 	{
 		int_values = ft_calloc(sizeof(int), (count_total_args(ac, av)));
