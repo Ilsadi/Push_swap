@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: ilsadi <ilsadi@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 12:44:34 by ilsadi            #+#    #+#              #
-#    Updated: 2025/06/14 01:23:14 by marvin           ###   ########.fr        #
+#    Updated: 2025/07/21 15:39:33 by ilsadi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,4 +87,3 @@ fclean: clean
 	@rm -f ${NAME}
 
 re: fclean all
-
